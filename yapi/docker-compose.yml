@@ -6,15 +6,22 @@ services:
     ports:
       - '27017:27017'
     volumes:
-      - ./mongo/db:/data/db
+      - ${PWD}/mongo/db:/data/db
+    networks: 
+      - back
   web:
     container_name: yapi_web
     image: shafley/yapi
-    depends_on:
-      - mongo
     ports:
       - '9090:9090'
       - '3000:3000'
+    links: 
+      - mongo
     volumes:
       - ${PWD}:/yapi
     command: 'yapi server'
+    networks: 
+      - back
+networks:
+  back:
+    driver: bridge
