@@ -1,6 +1,6 @@
 version: '3'
 services:
-  mongodb:
+  mongo:
     container_name: yapi_mongo
     image: mongo:latest
     ports:
@@ -11,7 +11,7 @@ services:
     container_name: yapi_web
     image: shafley/yapi
     depends_on:
-      - mongodb
+      - mongo
     ports:
       - '9090:9090'
       - '3000:3000'
