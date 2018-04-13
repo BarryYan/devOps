@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   web:
     image: 'gitlab/gitlab-ce:latest'
@@ -15,6 +15,6 @@ services:
       - '2222:22'
       - '443:443'
     volumes:
-      - './config:/etc/gitlab'
-      - './logs:/var/log/gitlab'
-      - './data:/var/opt/gitlab'
+      - '${PWD}/config:/etc/gitlab'
+      - '${PWD}/logs:/var/log/gitlab'
+      - '${PWD}/data:/var/opt/gitlab'

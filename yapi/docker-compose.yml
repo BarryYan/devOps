@@ -1,0 +1,20 @@
+version: '3'
+services:
+  mongodb:
+    container_name: yapi_mongo
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./mongo/db:/data/db
+  web:
+    container_name: yapi_web
+    image: shafley/yapi
+    depends_on:
+      - mongodb
+    ports:
+      - '9090:9090'
+      - '3000:3000'
+    volumes:
+      - ${PWD}:/yapi
+    command: 'yapi server'
