@@ -14,11 +14,10 @@ services:
     image: shafley/yapi
     ports:
       - '9090:9090'
-      - '3000:3000'
     links: 
-      - mongo
+      - mongo:mongo
     volumes:
-      - ${PWD}:/yapi
+      - ${PWD}:/home/yapi
     command: 'yapi server'
     networks: 
       - back
