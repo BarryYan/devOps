@@ -3,17 +3,21 @@ services:
   mongo:
     container_name: yapi_mongo
     image: mongo:latest
+    restart: always
     ports:
       - '27017:27017'
     volumes:
-      - ${PWD}/mongo/db:/data/db
+      - yapi_mongodata:/data/db
+      # - ${PWD}/mongo/db:/data/db
     networks: 
       - back
+  # winpty docker run -it --name=yapi_mongo -v d:devOps/yapi/mongo/db:/data/db -p 27017:27017 --restart=always mongo:latest 
   web:
     container_name: yapi_web
     image: shafley/yapi
+    restart: always
     ports:
-      - '9090:9090'
+      - '9999:9090'
     links: 
       - mongo:mongo
     volumes:
@@ -24,3 +28,6 @@ services:
 networks:
   back:
     driver: bridge
+volumes:
+  yapi_mongodata:
+    external: true
