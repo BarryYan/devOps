@@ -1,3 +1,5 @@
 *db
-*my-yapi*
+*.bak*
+*log
+*vendors
 *jenkins

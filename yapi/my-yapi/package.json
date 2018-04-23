@@ -1,0 +1,18 @@
+{
+  "name": "my-yapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "forever start --id yapi_web vendors/server/app.js",
+    "stop": "forever stop yapi_web",
+    "install": "rm -rf init.lock && node vendors/server/install.js",
+    "service": "cd .. && docker-compose up",
+    "copy": "docker cp yapi_mongo:/data/db/ ../mongo/db",
+    "bundle": "date '+%Y-%m-%d' | xargs -I {} tar -zcf ../mongo/backup/db.{}.tar.gz ../mongo/db",
+    "backup": "npm run copy && npm run bundle"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
