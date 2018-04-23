@@ -17,6 +17,5 @@ docker-compose up
 ## Backup
 
 1. 启动容器服务 `docker-compose up -d`
-2. 进入容器 `docker exec -it yapi_mongo /bin/bash`
-3. 在容器交互界面 `tar -zcf db-2018-04-24.tar.gz data/db`
-4. 退出容器， `docker cp yapi_mongo:/data/db-2018-04-24.tar.gz mongo/db/`
+2. 导出容器， `docker cp yapi_mongo:/data/db d:/devOps/yapi/mongo`
+3. 打包备份， `tar -zcf db.2018-04-24.tar.gz mongo/backup`
