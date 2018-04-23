@@ -12,7 +12,7 @@
     "bundle": "date '+%Y-%m-%d' | xargs -I {} tar -zcf ../mongo/backup/db.{}.tar.gz ../mongo/db",
     "backup": "npm run copy && npm run bundle"
   },
-  "author": "",
+  "author": "shafleyxia@gmai.com",
   "license": "ISC"
 }
 

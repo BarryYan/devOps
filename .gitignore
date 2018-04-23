@@ -1,4 +1,5 @@
 *db
+*backup
 *.bak*
 *log
 *vendors
