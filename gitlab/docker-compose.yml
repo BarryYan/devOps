@@ -7,14 +7,17 @@ services:
     hostname: 'localhost'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://localhost:9999'
+        external_url 'http://localhost:6666'
         gitlab_rails['gitlab_shell_ssh_port'] = 2222
         # Add any other gitlab.rb configuration here, each on its own line
     ports:
-      - '9999:80'
+      - '6666:80'
       - '2222:22'
       - '443:443'
     volumes:
-      - '${PWD}/config:/etc/gitlab'
-      - '${PWD}/logs:/var/log/gitlab'
-      - '${PWD}/data:/var/opt/gitlab'
+      - gitlab_volume:/etc/gitlab'
+      - gitlab_volume:/var/log/gitlab'
+      - gitlab_volume:/var/opt/gitlab'
+volumes:
+  gitlab_volume:
+    # external: true

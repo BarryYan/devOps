@@ -1,6 +1,7 @@
 Blue='\033[1;34m'
 Green='\033[1;32m'
 NC='\033[0m'
+
 Info='info: '
 Succ='Succ: '
 
