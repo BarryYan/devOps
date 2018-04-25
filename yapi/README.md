@@ -15,6 +15,11 @@ cd my-yapi && npm start
     adminPaassword: "ymfe.org"
 ```
 
+## web服务启动
+
+1. 开机等待 **docker yapi_mongo 容器正常启动** 服务正常启动
+2. 启动web服务 `cd my-yapi && npm start` 
+
 ## Backup
 
 1. 启动容器服务 `docker-compose up -d`
