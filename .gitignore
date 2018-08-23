@@ -1,6 +1,4 @@
-*db
-*backup
+*db.*
 *.bak*
 *log
 *vendors
-*jenkins
