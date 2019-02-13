@@ -1,0 +1,3 @@
+#!/bin/bash
+
+* * * * * ~/devOps/yapi/mongo/backup.sh
